@@ -1,0 +1,15 @@
+Fix pings in Vmware Player
+Check what vmnet nics are created:
+ip add
+change permissions on those nics:
+sudo chmod a+rw /dev/vmnet0
+sudo chmod a+rw /dev/vmnet1
+sudo chmod a+rw /dev/vmnet8
+
+Allow keys to be exchanged for ssh:
+cd .ssh
+rm known_hosts
+sudo nano /etc/ssh/ssh_config:
+delete # in front of Ciphers
+Add this above it:
+KexAlgorithms diffie-hellman-group1-sha1,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1
