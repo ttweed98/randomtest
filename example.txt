@@ -1,2 +1,4 @@
 This is a Github push example
-
+Adding some more text to this file. 
+This is the second test I am doing with this file. 
+I am going to pass this exam this time.
